@@ -1,0 +1,6 @@
+﻿[
+  {
+    "outputFile": "wwwroot/systemjs.config.es5.js",
+    "inputFile": "wwwroot/systemjs.config.js"
+  }
+]

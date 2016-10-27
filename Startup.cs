@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Angular2WithCoreMVC.Models;
 
 namespace Angular2WithCoreMVC
 {
@@ -29,6 +30,7 @@ namespace Angular2WithCoreMVC
         {
             // Add framework services.
             services.AddMvc();
+            services.AddSingleton<IHeroRepository, HeroRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,6 +40,8 @@ namespace Angular2WithCoreMVC
             loggerFactory.AddDebug();
 
             app.UseMvc();
+            app.UseStaticFiles();
+            app.UseDefaultFiles();
         }
     }
 }
